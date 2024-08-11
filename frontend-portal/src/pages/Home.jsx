@@ -28,12 +28,12 @@ const taskLIST = [
   },
   {
     name: "CV edit 2",
-    status: "in progress",
+    status: "to do",
     dueDate: "08-08-2024"
   },
   {
     name: "CV edit 2",
-    status: "in progress",
+    status: "to do",
     dueDate: "08-08-2024"
   },
 
@@ -42,27 +42,29 @@ const taskLIST = [
 ]
 
 const Home = () => {
-  // const { task_id } = useParams();
-  // console.log(task_id)
-  // useEffect(() => {
-  //   const fetchClientProjectInfo = async () => {
-  //     try {
-  //       const response = await fetch(`http://localhost:5000/api/client/gettask/${task_id}`, {
-  //         method: 'GET',
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //       });
-  //       const data = await response.json();
-  //       console.log(data);
-  //     } catch (error) {
-  //       console.error(error);
-        
-  //     }
-  //   };
+  const task_id = '86eq1bd57'
 
-  //   fetchClientProjectInfo();
-  // }, []);
+  useEffect(() => {   // Fetch task data including subtasks from ClickUp Workspace
+    const fetchClientProjectInfo = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/client/gettask/${task_id}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+        
+      }
+    };
+
+    fetchClientProjectInfo();
+  }, []);
+
+
   return (
    <>
     <PortalHeader/>
