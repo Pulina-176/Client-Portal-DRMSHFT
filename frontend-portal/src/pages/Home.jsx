@@ -12,12 +12,12 @@ const taskLIST = [
   },
   {
     name: "ATS Research",
-    status: "in progress",
+    status: "done",
     dueDate: "08-08-2024"
   },
   {
     name: "CV Edit 2",
-    status: "in progress",
+    status: "to do",
     dueDate: "08-08-2024"
   },
   {
