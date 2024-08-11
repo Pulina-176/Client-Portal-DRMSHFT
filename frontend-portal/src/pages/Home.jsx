@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PortalHeader from '../components/PortalHeader'
 import Ongoing from '../components/Ongoing'
 import Process from '../components/Process'
 import PortalFooter from '../components/PortalFooter'
+import { useParams } from'react-router-dom'
 
 const taskLIST = [
   {
@@ -41,6 +42,27 @@ const taskLIST = [
 ]
 
 const Home = () => {
+  // const { task_id } = useParams();
+  // console.log(task_id)
+  // useEffect(() => {
+  //   const fetchClientProjectInfo = async () => {
+  //     try {
+  //       const response = await fetch(`http://localhost:5000/api/client/gettask/${task_id}`, {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //       });
+  //       const data = await response.json();
+  //       console.log(data);
+  //     } catch (error) {
+  //       console.error(error);
+        
+  //     }
+  //   };
+
+  //   fetchClientProjectInfo();
+  // }, []);
   return (
    <>
     <PortalHeader/>
