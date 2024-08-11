@@ -26,7 +26,7 @@ function App() {
             <Route path="/" element={showLoading ? <Loading /> : <Navigate to="/portalbegin" />} />
             <Route path="/loading" element={<Loading />} />
             <Route path="/portalbegin" element={<PortalBegin userName="UserName" />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home/:task_id" element={<Home />} />
           </Routes>
         
       </BrowserRouter>
