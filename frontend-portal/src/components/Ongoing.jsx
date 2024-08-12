@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Ongoing = () => {
+const Ongoing = ({name}) => {
   return (
     <section  className= 'bg-primary'>
     <div className="flex-grow flex flex-col items-center justify-start text-center pt-40  text-tertiary ">
-    <h1 className="text-4xl font-bold font-poppins ">Hey <span className="text-secondary">Chathumi</span></h1>
+    <h1 className="text-4xl font-bold font-poppins ">Hey <span className="text-secondary">{name}</span></h1>
     <h2 className="text-4xl font-bold font-poppins ">Welcome </h2>
     <h2 className="text-xl mt-2 font-bold font-poppins"> to our  </h2>
     <h2 className="text-4xl font-bold font-poppins ">X portal</h2>
