@@ -12,7 +12,7 @@ function ClientPortal() { // First Child Component
   const { taskId } = useParams();  // Get the task ID from the URL parameter
 
   const [Tasks, setTasks] = useState([]);  // Array to store subtasks / tasks
-  const [clientName, setClientName] = useState(''); // Client Name
+  const [clientName, setClientName] = useState('Buddy'); // Client Name
   const [showLoading, setShowLoading] = useState(true); // Show loading screen
 
   useEffect(() => {   // Fetch task data including subtasks from ClickUp Workspace
@@ -50,7 +50,9 @@ function ClientPortal() { // First Child Component
         }
 
         setTasks(fetchedTasks); // Update state with fetched tasks
-        setClientName(data.clientName); // Update state with client name
+        if (data.clientName != undefined){
+          setClientName(data.clientName); // Update state with client name
+        }
         setShowLoading(false); // Hide loading screen after data is fetched
 
         console.log(fetchedTasks);
