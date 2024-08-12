@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Ongoing = ({name}) => {
+const Ongoing = ({name , currentTask}) => {
   return (
     <section  className= 'bg-primary'>
     <div className="flex-grow flex flex-col items-center justify-start text-center pt-40  text-tertiary ">
@@ -15,7 +15,7 @@ const Ongoing = ({name}) => {
             <div className="h-full bg-secondary animate-loading-bar"></div>
           </div>
         </div>
-        <h3 className="text-lg mt-6">ATS Research</h3>
+        <h3 className="text-lg mt-6">{currentTask.name}</h3>
         
   </div>
   </section>
