@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 
-import logo from '../assets/logo.svg'; 
+import logo1 from "../assets/logo1.png";
 import { Link } from 'react-router-dom';
 import '../App.css';
 
@@ -37,12 +37,12 @@ const PortalHeader = () => {
       }`}
     >
       <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-20 w-auto" />
+        <img src={logo1} alt="Logo" className="h-20 w-auto" />
       </div>
-      <nav className="flex space-x-4 ml-10">
-        <Link to="/tab1"className="text-tertiary hover:text-secondary px-4 py-2 rounded font-bold font-poppins">Overview</Link>
-        <Link to="/tab2" className="text-tertiary hover:text-secondary px-4 py-2 rounded font-bold font-poppins">Process</Link>
-      </nav>
+      <span class="relative flex h-3 w-3">
+  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+  <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+</span>
     </header>
     
   
