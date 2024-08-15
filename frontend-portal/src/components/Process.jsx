@@ -81,26 +81,24 @@ const Process = ({ taskLIST }) => {
 
   return (
     <section class="relative flex flex-col justify-center overflow-hidden antialiased">
-      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-6">
-        <div class="flex flex-col justify-center divide-y divide-slate-200 [&>*]:py-16">
+      <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-2">
+        <div class="flex flex-col justify-center divide-y divide-slate-200 [&>*]:py-0 mb-6">
           <div class="w-full max-w-3xl mx-auto">
             <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[8.75rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
               {taskLIST_sorted.map((task, index) => (
                 <div key={index} class="relative">
-                  <div class="md:flex items-center md:space-x-4 mb-3">
-                    <div class="flex items-center space-x-4 md:space-x-2 md:space-x-reverse">
-                      <div class="flex items-center justify-center ml-28 w-10 h-10 rounded-full bg-white shadow md:order-1">
+                 
+                      <div class="flex items-center justify-center ml-0 sm:ml-0 md:ml-28 w-10 h-10 rounded-full bg-white shadow md:order-1">
                         {renderIcon(task.status)}
                       </div>
-                    </div>
-                  </div>
+                 
 
-                  <div class="flex flex-col bg-white p-4 rounded border border-slate-200 shadow ml-14 md:ml-44">
+                  <div class="flex flex-col bg-white p-4 sm:p-6 md:p-8 rounded border border-slate-200 shadow ml-14 sm:ml-14 md:ml-44 ">
                     <h2 class="text-2xl place-self-start font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight ">
                       {task.name}
                     </h2>
                     <div class="flex items-center justify-around mb-4">
-                      <div class="mt-2 flex items-center font-semibold text-black mt-4">
+                      <div class=" flex items-center font-semibold text-black mt-4">
                         <svg
                           class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
                           viewBox="0 0 20 20"
@@ -115,7 +113,7 @@ const Process = ({ taskLIST }) => {
                         </svg>
                         Due date: {task.dueDate}
                       </div>
-                      <div class="mt-2 flex items-center text-md text-semibold text-gray-500 mt-4">
+                      <div class=" flex items-center text-md text-semibold text-gray-500 mt-4">
                         <i
                           class={`fas fa-${
                             task.status === "done"
