@@ -6,7 +6,7 @@ const Process = ({ taskLIST }) => {
   // First, sort by status: "done" first, then "in progress", then "to do"
   const taskLIST_sorted = taskLIST.sort((a, b) => {
     // Assign a weight to each status to determine order
-    const statusOrder = { done: 1, "in progress": 2, "to do": 3 };
+    const statusOrder = { "done": 1, "in progress": 2, "to do": 3 };
 
     const statusA = statusOrder[a.status] || 4; // Default to 4 if status is unknown
     const statusB = statusOrder[b.status] || 4;

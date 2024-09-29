@@ -25,7 +25,7 @@ export const fetchTaskWithSubtasks = async (req, res) => {
         const responseBody = await response.json();
         const taskData = responseBody;
         const subtasks = taskData.subtasks;
-        const clientNameField = taskData.custom_fields.find(field => field.name === '🤝 Client Name');
+        const clientNameField = taskData.custom_fields.find(field => field.name === 'Client Name');
         const clientName = clientNameField ? clientNameField.value : 'Unknown Client';
 
 
