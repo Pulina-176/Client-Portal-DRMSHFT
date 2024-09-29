@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useParams, Navigate } from 'react-router-dom';
-import './App.css';
+
 import Loading from './components/Loading';
 import PortalBegin from './components/PortalBegin';
 import { ClientData_Context } from './contexts/clientdata-context';
