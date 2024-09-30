@@ -7,6 +7,8 @@ import { ClientData_Context } from './contexts/clientdata-context';
 
 import Home from './pages/Home';
 
+const backendURL = import.meta.env.VITE_BACKEND_URL
+
 function ClientPortal() { // First Child Component
 
   const { taskId } = useParams();  // Get the task ID from the URL parameter
@@ -25,7 +27,7 @@ function ClientPortal() { // First Child Component
   useEffect(() => {   // Fetch task data including subtasks from ClickUp Workspace
     const fetchClientProjectInfo = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/client/gettask/${taskId}`, {
+        const response = await fetch(`${backendURL}/api/client/gettask/${taskId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
