@@ -9,7 +9,7 @@ export const test = (req, res) => {
 
 export const getAllTasks = async (req, res) => {
     try {
-        const response = await fetch(`https://api.clickup.com/api/v2/list/901802653104/task?include_subtasks=true`, {
+        const response = await fetch(`https://api.clickup.com/api/v2/list/901800309273/task?include_subtasks=true`, {
             method: 'GET',
             headers: {
                 'Authorization': process.env.API_TOKEN,
@@ -18,6 +18,7 @@ export const getAllTasks = async (req, res) => {
         });
 
         const responseBody = await response.json();
+        console.log(responseBody)
 
         // Check if tasks are present
         if (!responseBody.tasks || responseBody.tasks.length === 0) {
@@ -32,7 +33,7 @@ export const getAllTasks = async (req, res) => {
 
             // Return task id, name, and filtered ongoing subtasks
             return {
-                link: "http://localhost:5173/portal/"+task.id,
+                link: "http://localhost:5174/portal/"+task.id,
                 name: task.name,
                 status: status,
                 // subtasks: ongoingSubtasks.map(subtask => ({

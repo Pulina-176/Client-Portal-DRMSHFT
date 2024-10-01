@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DocumentIcon } from "@heroicons/react/24/solid";
+import { FaCopy } from "react-icons/fa6";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import {
   Card,
@@ -70,6 +71,21 @@ const Content = ({allProjects}) => {
 
   const test = allProjects.projects
 
+  // State to track which row's text has been copied
+  const [copiedIndex, setCopiedIndex] = useState(null);
+
+  // Copy function to handle copying text to clipboard
+  const handleCopy = (text, index) => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setCopiedIndex(index); // Set the copied row index to show confirmation
+        setTimeout(() => setCopiedIndex(null), 2000); // Remove confirmation after 2 seconds
+      })
+      .catch((err) => console.error("Failed to copy text: ", err));
+  };
+
+
 
   return (
     <div className="p-36 md:p-36 min-h-screen w-full flex flex-col items-start font-poppins bg-primary text-tertiary">
@@ -96,7 +112,7 @@ const Content = ({allProjects}) => {
               const classes = isLast ? "p-8" : "p-8 border-b border-gray-300";
 
               return (
-                <tr key={project.name} flex flex-col md:flex-row md:table-row>
+                <tr key={project.name}>
                   <td className={`${classes} flex-1 md:flex-none`}>
                     <Typography variant="small" color="blue-gray" className="font-bold">
                         {project.name}
@@ -110,10 +126,24 @@ const Content = ({allProjects}) => {
                   </td>
                   <td className={`${classes} flex-1 md:flex-none`}>
                     <Typography variant="small" className="font-normal text-gray-600">
-                      {project.link}
-                      <IconButton variant="text" size="sm">
-                        <DocumentIcon className="h-4 w-4 text-gray-900" />
-                      </IconButton>
+                      <div className="flex flex-row">
+                          <input  type="text" class="text" value={project.link}
+                                  readOnly
+                                  style={{ width: `${project.link.length}ch` }} />
+                          <button 
+                              onClick={() => handleCopy(project.link, index)} // Call the copy function on click
+                              id={index}
+                              className="cursor-pointer p-1">
+                              
+                              <FaCopy />
+                          </button>
+                          {copiedIndex === index && (
+                            <span className="ml-2 text-green-500 font-semibold text-sm">
+                              Copied!
+                            </span>
+                          )}
+                      </div>
+
                     </Typography>
                   </td>
                   
