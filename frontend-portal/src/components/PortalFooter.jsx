@@ -9,11 +9,11 @@ const PortalFooter = () => {
         href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/motion-tailwind.css"
       />
 
-      <div className="flex flex-col mx-0 bg-primary rounded-none">
+      <div className="flex flex-col mx-0 bg-primary rounded-none pt-10 pb-5 ">
         <div className="w-full draggable">
           <div className="container flex flex-col mx-auto ">
             <div className="flex flex-col items-center w-full my-0">
-              <span className="mb-2">
+              <span className="mb-5">
 
                 <img
                   src={Golden}
@@ -49,7 +49,7 @@ const PortalFooter = () => {
                     Terms
                   </a>
                 </div>
-                <div className="flex items-center gap-8 ">
+                <div className="flex items-center gap-8 pb-4 ">
                   <a
                     href="https://dreamshift.net/"
                     className="text-secondary hover:text-secondary"
@@ -179,7 +179,7 @@ const PortalFooter = () => {
                   </a>
                 </div>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center pb-4">
             <p className="text-base font-normal leading-7 text-center text-white">
               2024 DreamShift. All rights reserved.
             </p>
