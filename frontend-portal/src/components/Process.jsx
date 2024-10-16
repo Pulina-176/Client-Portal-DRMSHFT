@@ -79,6 +79,17 @@ const Process = ({ taskLIST }) => {
     }
   };
 
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "done":
+        return "text-green-500";
+      case "in progress":
+        return "text-yellow-500";
+      case "to do":
+        return "text-red-500";
+     
+    }
+  };
   return (
     <section class="relative flex flex-col justify-center overflow-hidden antialiased">
       <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-2">
@@ -95,7 +106,7 @@ const Process = ({ taskLIST }) => {
                  
 
                   <div class="flex flex-col bg-white p-4 sm:p-6 md:p-8 rounded border border-slate-200 shadow ml-14 sm:ml-14 md:ml-44 ">
-                    <h2 class="text-2xl place-self-start font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight ">
+                    <h2 class="text-2xl place-self-start font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight ${getStatusColor(task.status) ">
                       {task.name}
                     </h2>
                     <div class="flex items-center justify-around mb-4">
@@ -132,7 +143,7 @@ const Process = ({ taskLIST }) => {
                         />
                         <div class="flex items-center text-md text-semibold text-green-500">
                         <FaTags className="mr-2 text-gray-400" />
-                        Status: {task.status}
+                        <span className={`${getStatusColor(task.status)}`}>Status: {task.status}</span>
                       </div>
                       </div>
                       
