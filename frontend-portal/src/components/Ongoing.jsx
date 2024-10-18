@@ -8,10 +8,9 @@ const Ongoing = ({ name, currentTask }) => {
     
     <section className="flex flex-col md:flex-row h-screen  -mb-22">
      
-      <div className="flex flex-col justify-center w-full md:w-2/3 text-tertiary px-4 md:pl-10">
+      <div className="flex flex-col gap-[10px] justify-center w-full md:w-2/3 text-tertiary px-4 md:pl-10">
         <h2 className="text-center md:text-start text-4xl sm:text-5xl md:text-6xl font-bold mb-2 leading-tight mt-16">
-          <span>
-            View your</span><br className="md:hidden" /> <span className="text-secondary">DreamShift&nbsp;</span>
+          <span className="">View your</span><br className="md:hidden" /> <span className="text-secondary pt-[5px]">DreamShift&nbsp;</span>
             <br className="hidden md:block" />
             <br className="sm:hidden" />
             <span>Project&nbsp;</span>
@@ -20,6 +19,7 @@ const Ongoing = ({ name, currentTask }) => {
         
           
         </h2>
+        
 
         <p className="text-center md:text-start text-xl font-semibold mb-8">
           <span>
@@ -27,7 +27,7 @@ const Ongoing = ({ name, currentTask }) => {
           </span>
         </p>
         
-        <div className="flex justify-center md:justify-start">
+        <div className="flex justify-center md:justify-start hidden md:block">
         <svg
           className="animate-bounce w-20 h-20 text-yellow-500 mt-4 text-5xl justify-center hover:cursor-pointer " 
         >
@@ -45,6 +45,14 @@ const Ongoing = ({ name, currentTask }) => {
         />
        
       </div>
+
+      <div className="flex justify-center start md:hidden sm:pt-[50px]">
+        <svg
+          className="flex animate-bounce w-20 h-20 text-yellow-500 mt-4 text-5xl justify-center hover:cursor-pointer " 
+        >
+          <FaAngleDown/>
+        </svg>
+        </div>
       
     </section>
     </>
