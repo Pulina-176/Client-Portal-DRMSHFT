@@ -67,7 +67,7 @@ const TABLE_HEAD = [
 //   },
 // ];
 
-const Content = ({allProjects}) => {
+const Content = ({allProjects, searchQuery}) => {
 
   const test = allProjects.projects
 
@@ -83,12 +83,25 @@ const Content = ({allProjects}) => {
         setTimeout(() => setCopiedIndex(null), 2000); // Remove confirmation after 2 seconds
       })
       .catch((err) => console.error("Failed to copy text: ", err));
-  };
+    };
+
+      //const [filteredProjects, setFilteredProjects] = useState([]);
+
+  /*useEffect(() => {
+    const filtered = allProjects.projects.filter((project) =>
+      project.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredProjects(filtered);
+  }, [searchQuery, allProjects]);
+  }; */
+  const filteredProjects = test.filter((project) =>
+    project.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
 
 
   return (
-    <div className="p-36 md:p-36 min-h-screen w-full flex flex-col items-start font-poppins bg-primary text-tertiary">
+    <div className="p-8 md:p-36 min-h-screen w-full flex flex-col items-start font-poppins bg-primary text-tertiary">
       <Card className="h-full w-full p-8 overflow-x-auto">
         
         <table className="w-full min-w-max table-auto text-left bg-white text-black">
@@ -107,8 +120,10 @@ const Content = ({allProjects}) => {
             </tr>
           </thead>
           <tbody>
-            {test.map((project, index) => {
-              const isLast = index === test.length - 1;
+          {filteredProjects.map((project, index) => {
+            //{test.map((project, index) => {
+              //const isLast = index === test.length - 1;
+              const isLast = index === filteredProjects.length - 1;
               const classes = isLast ? "p-8" : "p-8 border-b border-gray-300";
 
               return (
@@ -127,7 +142,7 @@ const Content = ({allProjects}) => {
                   <td className={`${classes} flex-1 md:flex-none`}>
                     <Typography variant="small" className="font-normal text-gray-600">
                       <div className="flex flex-row">
-                          <input  type="text" class="text" value={project.link}
+                          <input  type="text" className="text" value={project.link}
                                   readOnly
                                   style={{ width: `${project.link.length}ch` }} />
                           <button 
