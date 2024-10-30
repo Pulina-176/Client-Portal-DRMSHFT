@@ -33,7 +33,7 @@ export const getAllTasks = async (req, res) => {
 
             // Return task id, name, and filtered ongoing subtasks
             return {
-                link: "http://localhost:5174/portal/"+task.id,
+                link: `${process.env.REDIRECT_CLIENT_URL_HEAD}/portal/`+task.id,
                 name: task.name,
                 status: status,
                 // subtasks: ongoingSubtasks.map(subtask => ({
