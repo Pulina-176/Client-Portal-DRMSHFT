@@ -9,14 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Navigate to backend-portal directory, install dependencies, and build
-      - name: Install dependencies for Node.js App
-        working-directory: ./backend-portal
-        run: |
-          npm install
+    #   # Navigate to backend-portal directory, install dependencies, and build
+    #   - name: Install dependencies for Node.js App
+    #     working-directory: ./backend-portal
+    #     run: |
+    #       npm install
 
       # Upload backend-portal to the server via FTP
-      - name: Upload Node.js App to Server via FTP
+      - name: Upload Portal backend Files to Server via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.FTP_SERVER }}
