@@ -5,6 +5,7 @@ import { useEffect, useState} from 'react';
 import { ProjectData_Context } from '../contexts/projectdata-context';
 import Loading from './components/Loading';
 
+const backendURL = import.meta.env.VITE_BACKEND_URL
 
 const App = () => {
   const [projects, setprojects] = useState([]);
@@ -14,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/admin/allprojects`, {
+        const response = await fetch(`${backendURL}/api/admin/allprojects`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
