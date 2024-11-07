@@ -8,9 +8,9 @@ app.use(express.json()); //by default we cannot send json body
 
 app.use(cors());
 
-// app.get("/api", (req, res) => {
-//     res.json({ "clients": ["client1", "client2"] })
-// })
+app.get("/test", (req, res) => {
+    res.json({ "clients": "success" })
+})
 
 app.listen(5000, () => console.log("Server running on port 5000"));
 
