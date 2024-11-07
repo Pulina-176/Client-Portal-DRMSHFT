@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="mt-14"></div>
+      <div className="h-[80px]"></div>
       <Search setSearchQuery={setSearchQuery}/>
       <Content allProjects={projData} searchQuery={searchQuery}/>
       <Footer />
