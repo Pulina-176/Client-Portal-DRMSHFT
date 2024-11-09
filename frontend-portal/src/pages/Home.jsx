@@ -8,13 +8,17 @@ import { ClientData_Context } from '../contexts/clientdata-context'
 const Home = () => {
 
   const import_data = useContext(ClientData_Context)
-  const clientName = import_data.clientName
+  //const clientName = import_data.clientName
+  const projectName = import_data.taskData?.name || 'No Project Name';
   const taskList = import_data.Tasks
+
+   // Filter out tasks related to "CV Edit"
+   const filteredTaskList = taskList.filter(task => !task.name.toLowerCase().includes("cv edit"));
 
 
   //Need to display the task that is currently in progress which is also with the closest due date
 
-  const inprogress_tasks = taskList.filter(task => task.status === "in progress") //getting the tasks that are currently in progress
+  const inprogress_tasks = filteredTaskList.filter(task => task.status === "in progress") //getting the tasks that are currently in progress
 
   let inprogress_task
 
@@ -37,9 +41,9 @@ const Home = () => {
   return (
    <>
     <Nav currentTask={inprogress_task} />
-    <Ongoing name={clientName} currentTask={inprogress_task}/>
+    <Ongoing name={projectName} currentTask={inprogress_task}/>
    
-    <Process taskLIST={taskList}/>
+    <Process taskLIST={filteredTaskList}/>
    
     <PortalFooter />
  

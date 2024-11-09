@@ -2,13 +2,14 @@ import React from 'react';
 import logo from "../assets/logo.png";
 import { useNavigate } from 'react-router-dom';
 
-const PortalBegin = ({ userName }) => {
+const PortalBegin = ({ userName, fullProjectName }) => {
   const navigate = useNavigate();
   
   const handleNavigate = () => {
     const currentUrl = window.location.pathname; // Get the current URL path
     navigate(`${currentUrl}/c`); // Navigate to /c appended to the current URL
   }
+  const firstWord = userName
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-primary text-tertiary ">
@@ -20,7 +21,7 @@ const PortalBegin = ({ userName }) => {
       
       <div className="text-center mt-2">
       <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold font-poppins">
-          Hi <span className="text-secondary">{userName}</span>
+          Hi <span className="text-secondary">{firstWord}!</span>
         </h1>
         <h2 className="text-3xl sm:text-4xl md:text-4xl mt-2 font-bold font-poppins">Welcome to Dreamshift <span className="block sm:hidden"> Client Portal</span><span className="hidden sm:inline">Client Portal</span></h2>
         <a
