@@ -11,10 +11,13 @@ const Home = () => {
   const clientName = import_data.clientName
   const taskList = import_data.Tasks
 
+   // Filter out tasks related to "CV Edit"
+   const filteredTaskList = taskList.filter(task => !task.name.toLowerCase().includes("cv edit"));
+
 
   //Need to display the task that is currently in progress which is also with the closest due date
 
-  const inprogress_tasks = taskList.filter(task => task.status === "in progress") //getting the tasks that are currently in progress
+  const inprogress_tasks = filteredTaskList.filter(task => task.status === "in progress") //getting the tasks that are currently in progress
 
   let inprogress_task
 
@@ -39,7 +42,7 @@ const Home = () => {
     <Nav currentTask={inprogress_task} />
     <Ongoing name={clientName} currentTask={inprogress_task}/>
    
-    <Process taskLIST={taskList}/>
+    <Process taskLIST={filteredTaskList}/>
    
     <PortalFooter />
  
