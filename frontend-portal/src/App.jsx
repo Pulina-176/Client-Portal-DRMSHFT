@@ -14,7 +14,10 @@ function ClientPortal() { // First Child Component
   const { taskId } = useParams();  // Get the task ID from the URL parameter
 
   const [Tasks, setTasks] = useState([]);  // Array to store subtasks / tasks
-  const [clientName, setClientName] = useState('Buddy'); // Client Name
+  const [fullProjectName, setFullProjectName] = useState('');
+  const [firstWord, setFirstWord] = useState(''); 
+  const[taskData, setTaskData] = useState([]); // Array to store task data
+  //const [clientName, setClientName] = useState('Buddy'); // Client Name
   const [showLoading, setShowLoading] = useState(true); // Show loading screen
   const formatDate = (timestamp) => {
     const date = new Date(parseInt(timestamp));
@@ -59,8 +62,9 @@ function ClientPortal() { // First Child Component
         }
 
         setTasks(fetchedTasks); // Update state with fetched tasks
-        if (data.clientName != undefined){
-          setClientName(data.clientName); // Update state with client name
+        if (data.taskData.name != undefined){
+          setFullProjectName(data.taskData.name);
+          setFirstWord(data.taskData.name.split(' ')[0]); // Update state with client name
         }
         setShowLoading(false); // Hide loading screen after data is fetched
 
@@ -79,9 +83,9 @@ function ClientPortal() { // First Child Component
   }
 
   return (
-    <ClientData_Context.Provider value={{ Tasks, clientName }}>   {/*  Provide Tasks and clientName to all components  */}
+    <ClientData_Context.Provider value={{ Tasks, taskData }}>   {/*  Provide Tasks and clientName to all components  */}
       <Routes>
-        <Route path="/" element={<PortalBegin userName={clientName} />} />
+        <Route path="/" element={<PortalBegin userName={firstWord} fullProjectName={fullProjectName} />} />
         <Route path="/c" element={<Home />} />
       </Routes>
     </ClientData_Context.Provider>

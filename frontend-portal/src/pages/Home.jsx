@@ -8,7 +8,8 @@ import { ClientData_Context } from '../contexts/clientdata-context'
 const Home = () => {
 
   const import_data = useContext(ClientData_Context)
-  const clientName = import_data.clientName
+  //const clientName = import_data.clientName
+  const projectName = import_data.taskData?.name || 'No Project Name';
   const taskList = import_data.Tasks
 
 
@@ -37,7 +38,7 @@ const Home = () => {
   return (
    <>
     <Nav currentTask={inprogress_task} />
-    <Ongoing name={clientName} currentTask={inprogress_task}/>
+    <Ongoing name={projectName} currentTask={inprogress_task}/>
    
     <Process taskLIST={taskList}/>
    
