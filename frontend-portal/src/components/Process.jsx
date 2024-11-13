@@ -68,7 +68,7 @@ const Process = ({ taskLIST }) => {
         <div className="flex flex-col justify-center divide-y divide-slate-200 [&>*]:py-0 mb-6">
           <div className="w-full max-w-3xl mx-auto">
             <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[8.75rem]  md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
-              {taskLIST_sorted.map((task, index) => (
+              {final_taskLIST.map((task, index) => (
                 <div key={index} className="relative">
                   <div className="flex items-center justify-center ml-0 sm:ml-0 md:ml-[120px] lg:ml-[120px] w-10 h-10 rounded-full bg-white shadow md:order-1">
                     {renderIcon(task.status)}
