@@ -34,7 +34,7 @@ export default {
       'serif': ['ui-serif', 'Georgia'],
       'mono': ['ui-monospace', 'SFMono-Regular'],
       inter: ['Inter', 'sans-serif'],
-      poppins: ['Poppins', 'sans-serif'],
+      poppins: ['Poppins','Inter', 'sans-serif'],
     },
   },
   plugins: [],

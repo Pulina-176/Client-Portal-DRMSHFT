@@ -9,7 +9,7 @@ const PortalFooter = () => {
         href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/motion-tailwind.css"
       />
 
-      <div className="flex flex-col mx-0 bg-primary rounded-none pt-10 pb-5 ">
+      <div className="flex flex-col mx-0 bg-primary rounded-none pt-16 pb-5 ">
         <div className="w-full draggable">
           <div className="container flex flex-col mx-auto ">
             <div className="flex flex-col items-center w-full my-0">
