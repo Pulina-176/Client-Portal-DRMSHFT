@@ -39,7 +39,7 @@ const TABLE_HEAD = [
 //   },
 //   {
 //     name: "Dileep Saranga",
-//     ongoingtask: "CV Edit Part 1",
+//     ongoingtask: " Part 1",
 //     clientlink: "abcdef",
 //     linkstatus: "",
     
