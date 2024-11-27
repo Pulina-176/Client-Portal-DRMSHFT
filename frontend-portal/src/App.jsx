@@ -86,7 +86,7 @@ function ClientPortal() { // First Child Component
     <ClientData_Context.Provider value={{ Tasks, taskData }}>   {/*  Provide Tasks and clientName to all components  */}
       <Routes>
         <Route path="/" element={<PortalBegin userName={firstWord} fullProjectName={fullProjectName} />} />
-        <Route path="/c" element={<Home />} />
+        <Route path="/c" element={<Home userName={firstWord}  />} />
       </Routes>
     </ClientData_Context.Provider>
   );

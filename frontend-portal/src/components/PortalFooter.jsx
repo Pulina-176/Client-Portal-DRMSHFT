@@ -25,25 +25,15 @@ const PortalFooter = () => {
               <div className="flex flex-col items-center gap-6 mb-2">
                 <div className="flex flex-wrap items-center justify-center gap-5 lg:gap-12 gap-y-2 lg:flex-nowrap text-dark-grey-900">
                   <a
-                    href="javascript:void(0)"
+                    href="https://dreamshift.net/"
                     className="text-white hover:text-secondary"
                   >
                     About
                   </a>
+                  
+                  
                   <a
-                    href="javascript:void(0)"
-                    className="text-white hover:text-secondary"
-                  >
-                    Contact
-                  </a>
-                  <a
-                    href="javascript:void(0)"
-                    className="text-white hover:text-secondary"
-                  >
-                    Help
-                  </a>
-                  <a
-                    href="javascript:void(0)"
+                    href="https://dreamshift.net/privacy-policy/"
                     className="text-white hover:text-secondary"
                   >
                     Terms
@@ -51,7 +41,7 @@ const PortalFooter = () => {
                 </div>
                 <div className="flex items-center gap-8 pb-4 ">
                   <a
-                    href="https://dreamshift.net/"
+                    href="https://www.facebook.com/dreamshift.careers/"
                     className="text-secondary hover:text-secondary"
                   >
                     <svg
@@ -87,45 +77,10 @@ const PortalFooter = () => {
                       <g mask="url(#mask0_3320_6483)"></g>
                     </svg>
                   </a>
-                  <a
-                    href="javascript:void(0)"
-                    className="text-grey-700 hover:text-grey-900"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M21.8182 6.14597C21.1356 6.44842 20.4032 6.65355 19.6337 6.74512C20.4194 6.27461 21.0208 5.5283 21.3059 4.64176C20.5689 5.07748 19.7553 5.39388 18.8885 5.56539C18.1943 4.82488 17.207 4.36364 16.1118 4.36364C14.0108 4.36364 12.3072 6.06718 12.3072 8.16706C12.3072 8.46488 12.3408 8.75576 12.4058 9.03391C9.24436 8.87512 6.44106 7.36048 4.56485 5.05894C4.23688 5.61985 4.0503 6.27342 4.0503 6.97109C4.0503 8.29106 4.72246 9.45573 5.74227 10.1371C5.11879 10.1163 4.53239 9.94476 4.01903 9.65967V9.70718C4.01903 11.5498 5.33088 13.0876 7.07033 13.4376C6.75164 13.5234 6.41558 13.5709 6.06791 13.5709C5.82224 13.5709 5.58467 13.5465 5.35173 13.5002C5.83612 15.0125 7.2407 16.1123 8.90485 16.1424C7.60343 17.1622 5.96246 17.7683 4.18012 17.7683C3.87303 17.7683 3.57055 17.7498 3.27273 17.7162C4.95658 18.7974 6.95564 19.4278 9.10418 19.4278C16.1026 19.4278 19.9281 13.6312 19.9281 8.60397L19.9153 8.11145C20.6628 7.57833 21.3094 6.90851 21.8182 6.14597Z"
-                        fill="white"
-                      />
-                      <mask
-                        id="mask0_3320_6484"
-                        style={{ maskType: "luminance" }}
-                        maskUnits="userSpaceOnUse"
-                        x={3}
-                        y={4}
-                        width={19}
-                        height={16}
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M21.8182 6.14597C21.1356 6.44842 20.4032 6.65355 19.6337 6.74512C20.4194 6.27461 21.0208 5.5283 21.3059 4.64176C20.5689 5.07748 19.7553 5.39388 18.8885 5.56539C18.1943 4.82488 17.207 4.36364 16.1118 4.36364C14.0108 4.36364 12.3072 6.06718 12.3072 8.16706C12.3072 8.46488 12.3408 8.75576 12.4058 9.03391C9.24436 8.87512 6.44106 7.36048 4.56485 5.05894C4.23688 5.61985 4.0503 6.27342 4.0503 6.97109C4.0503 8.29106 4.72246 9.45573 5.74227 10.1371C5.11879 10.1163 4.53239 9.94476 4.01903 9.65967V9.70718C4.01903 11.5498 5.33088 13.0876 7.07033 13.4376C6.75164 13.5234 6.41558 13.5709 6.06791 13.5709C5.82224 13.5709 5.58467 13.5465 5.35173 13.5002C5.83612 15.0125 7.2407 16.1123 8.90485 16.1424C7.60343 17.1622 5.96246 17.7683 4.18012 17.7683C3.87303 17.7683 3.57055 17.7498 3.27273 17.7162C4.95658 18.7974 6.95564 19.4278 9.10418 19.4278C16.1026 19.4278 19.9281 13.6312 19.9281 8.60397L19.9153 8.11145C20.6628 7.57833 21.3094 6.90851 21.8182 6.14597Z"
-                          fill="white"
-                        />
-                      </mask>
-                      <g mask="url(#mask0_3320_6484)"></g>
-                    </svg>
-                  </a>
+                  
                  
                   <a
-                    href="javascript:void(0)"
+                    href="https://www.linkedin.com/company/dreamshiftcareers/posts/?feedView=all"
                     className="text-grey-700 hover:text-grey-900"
                   >
                     <svg
@@ -142,7 +97,7 @@ const PortalFooter = () => {
                     </svg>
                   </a>
                   <a
-                    href="javascript:void(0)"
+                    href="https://www.instagram.com/dreamshift.careers/"
                     className="text-grey-700 hover:text-grey-900"
                   >
                     <svg

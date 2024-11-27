@@ -1,37 +1,57 @@
 import React from "react";
 import hero from "../assets/hero.png";
 import { FaAngleDown } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-const Ongoing = ({ name, currentTask }) => {
+const Ongoing = ({ userName, currentTask }) => {
+  const navigate = useNavigate();
+  const firstWord = userName;
+  const handleNavigate = () => {
+    navigate("/process")
+  }
   return (
     <>
       <section className="flex flex-col md:flex-row h-screen -mb-22 md:px-[20px] lg:px-[50px] xl:px-[150px]">
         <div className="flex flex-col gap-[10px] justify-center w-full md:w-2/3 text-tertiary px-4 md:pl-10 ">
-          <h2 className="text-center md:text-start text-4xl sm:text-5xl md:text-6xl font-bold mb-2 leading-tight mt-16 lg:mt-10">
-            <div className="  md:hidden ">
-              <span>View your </span>
-              <br className="md:hidden" />
-              <span className="text-secondary pt-[5px] md:pt-8 lg:pt-12">DreamShift&nbsp;</span>
-              <br className="hidden md:block" />
-              <br className="sm:hidden" />
-              <span className="md:mt-8 lg:mt-[100px] lg:pt-[40px]">Project&nbsp;</span>
-              <br className="hidden sm:block md:hidden" />
-              <span>Progress</span>
-            </div>
-            <div className=" hidden  xl:flex  flex-col gap-5">
-              <h1>View your <span className="text-secondary">DreamShift</span></h1>
-              <h1>Project Progress</h1>
+        <h2 className="text-center md:text-start text-4xl sm:text-5xl md:text-6xl font-bold mb-2 leading-tight mt-16 lg:mt-10">
+  <div className="md:hidden">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+      Hi <span className="text-secondary">{firstWord}!</span>
+    </h1>
+    <span className="text-xl sm:text-2xl md:text-3xl">View your </span>
+    <br className="md:hidden" />
+    <span className="text-secondary text-xl sm:text-2xl md:text-3xl pt-[5px] md:pt-8 lg:pt-12">
+      DreamShift&nbsp;
+    </span>
+    <br className="hidden md:block" />
+    <br className="sm:hidden" />
+    <span className="text-xl sm:text-2xl md:text-3xl md:mt-8 lg:mt-[100px] lg:pt-[40px]">
+      Project&nbsp;
+    </span>
+    <br className="hidden sm:block md:hidden" />
+    <span className="text-xl sm:text-2xl md:text-3xl">Progress</span>
+  </div>
 
-            </div>
-            <div className=" hidden md:block xl:hidden flex-col gap-5">
-              <h1>View your </h1>
-              <h1 className="text-secondary">DreamShift</h1>
-              <h1>Project Progress</h1>
+  <div className="hidden xl:flex flex-col gap-5">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+      Hi <span className="text-secondary">{firstWord}!</span>
+    </h1>
+    <h1 className="text-xl sm:text-2xl md:text-3xl">
+      View your <span className="text-secondary">DreamShift</span>
+    </h1>
+    <h1 className="text-xl sm:text-2xl md:text-3xl">Project Progress</h1>
+  </div>
 
-            </div>
-          </h2>
+  <div className="hidden md:block xl:hidden flex-col gap-5">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+      Hi <span className="text-secondary">{firstWord}!</span>
+    </h1>
+    <h1 className="text-4xl sm:text-2xl md:text-3xl mt-6">View your <span className="text-secondary">DreamShift</span> Project Progress</h1>
+  </div>
+</h2>
 
-          <p className="text-center md:text-start text-xl font-semibold mb-8 pt-6">
+
+          <p className="text-center md:text-start text-xl font-semibold mb-8 ">
             <span>Contact us for any further information.</span>
           </p>
 
@@ -50,7 +70,7 @@ const Ongoing = ({ name, currentTask }) => {
         </div>
 
         <div className="flex justify-center md:hidden sm:pt-[50px]">
-          <FaAngleDown className="animate-bounce w-20 h-20 text-yellow-500 mt-4 text-5xl hover:cursor-pointer" />
+          <FaAngleDown onClick={handleNavigate} className="animate-bounce w-20 h-20 text-yellow-500 mt-4 text-5xl hover:cursor-pointer" />
         </div>
       </section>
     </>
