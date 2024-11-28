@@ -101,17 +101,17 @@ const Content = ({allProjects, searchQuery}) => {
 
 
   return (
-    <div className="p-8 md:p-36 min-h-screen w-full flex flex-col items-start font-poppins bg-primary text-tertiary">
+    <div className="p-8 md:p-12 min-h-screen w-full flex flex-col items-start font-poppins bg-primary text-tertiary">
       <Card className="h-full w-full p-8 overflow-x-auto">
         
         <table className="w-full min-w-max table-auto text-left bg-white text-black">
-          <thead className="text-[36px]">
+          <thead className="text-[48px]">
             <tr>
               {TABLE_HEAD.map(({ head, icon }) => (
                 <th key={head} className="border-b border-gray-300 p-8">
                   <div className="flex items-center gap-1">
                     {icon}
-                    <Typography color="blue-gray" variant="small" className="!font-bold">
+                    <Typography color="blue-gray" variant="medium" className="!font-bold">
                       {head}
                     </Typography>
                   </div>
@@ -129,7 +129,7 @@ const Content = ({allProjects, searchQuery}) => {
               return (
                 <tr key={project.name}>
                   <td className={`${classes} flex-1 md:flex-none`}>
-                    <Typography variant="small" color="blue-gray" className="font-bold">
+                    <Typography variant="small" color="blue-gray" className="font">
                         {project.name}
                       </Typography>
                     

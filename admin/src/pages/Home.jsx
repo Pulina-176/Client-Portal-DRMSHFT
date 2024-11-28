@@ -14,7 +14,6 @@ const Home = () => {
       <div className="h-[80px]"></div>
       <Search setSearchQuery={setSearchQuery}/>
       <Content allProjects={projData} searchQuery={searchQuery}/>
-      <Footer />
     </div>
   );
 };
