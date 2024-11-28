@@ -4,12 +4,17 @@ import logo1 from "../assets/logo1.png";
 const Nav = ({currentTask}) => {
   return (
     <div className="py-[24px]">
-      <nav className="py-[16px] fixed top-0 left-0 w-full bg-addprim z-50">
+      <nav className="py-[16px] fixed top-0 left-0 w-full bg-primary lg:bg-addprim z-50">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
           <div class="relative flex h-16 items-center justify-between">
             <div class="flex flex-1 items-center justify-start">
               <div class="flex flex-shrink-0 items-center ">
-                <img class="h-12 w-auto" src={logo1} alt="Your Company" />
+              <img 
+  className="h-8 w-auto pl-4 sm:h-10 md:h-12 lg:h-16 xl:h-20" 
+  src={logo1} 
+  alt="Your Company" 
+/>
+
               </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 ">

@@ -27,7 +27,7 @@ const Home = ({userName}) => {
 
   if (inprogress_tasks.length === 0) {  // getting the first task expected to be complete in the inprogress_tasks array
     inprogress_task = {
-      name: "No tasks in progress"}  
+      name: "None"}  
   }
   else {
     inprogress_task = inprogress_tasks[0]  // bubble sort method to get the task with the earliest due date
