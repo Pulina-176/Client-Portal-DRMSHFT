@@ -92,7 +92,7 @@ const Process = ({ taskLIST }) => {
                     <div className="flex items-center justify-around mb-4">
                       <div className="flex items-center font-inter text-black mt-4">
                         <BiCalendarEvent className="mr-2 text-gray-700" />
-                        Due date: {(task.dueDate = null ? "None" : (task.dueDate))}
+                        Due date: {(task.dueDate === "NaN/NaN/NaN" ? "No Due Date" : new Date(new Date(task.dueDate).setDate(new Date(task.dueDate).getDate() + 1)).toDateString())}
                       </div>
                       <div className="flex items-center text-md text-semibold text-gray-500 mt-4">
                         <BiTask className="mr-2 text-gray-700" />
