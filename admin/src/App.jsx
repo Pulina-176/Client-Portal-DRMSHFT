@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import { useEffect, useState} from 'react';
 import { ProjectData_Context } from '../contexts/projectdata-context';
 import Loading from './components/Loading';
+import SignIn from './pages/SignIn';
 
 const backendURL = import.meta.env.VITE_BACKEND_URL
 
@@ -41,8 +42,8 @@ const App = () => {
     <Router>
       <ProjectData_Context.Provider value={{projects}}>
       <Routes>
-        <Route path="/" element={<div> <Home /> </div>}/>
-       
+        <Route path="/links" element={<div> <Home /> </div>}/>
+        <Route path="/" element={<div> <SignIn /> </div>}/>
       </Routes>
       </ProjectData_Context.Provider>
     </Router>
