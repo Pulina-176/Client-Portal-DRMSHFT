@@ -3,11 +3,23 @@ import clientRoutes from "./routes/client.route.js";
 import adminRoutes from "./routes/admin.route.js";
 import authRoutes from "./routes/auth.route.js";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 const app = express();
 
 app.use(express.json()); //by default we cannot send json body
+const allowedOrigins = ["http://localhost:4445", "http://localhost:4444"];
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
+}));
 
-app.use(cors());
+app.use(cookieParser());
 
 app.get("/test", (req, res) => {
     res.json({ "clients": "success" })

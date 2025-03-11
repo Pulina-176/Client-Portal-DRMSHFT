@@ -9,7 +9,7 @@
     try {
         if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
             const token = jwt.sign({username: username}, process.env.JWT_SECRET);
-            res.cookie('access_token', token, {httpOnly: true, expires: expiryDate, secure: true});
+            res.cookie('access_token', token, {httpOnly: false, expires: expiryDate, path: '/', secure: false});
             return res.status(200).json({message: "Signin successful"});
         } else {
             return res.status(401).json({message: "Invalid credentials"});
@@ -18,4 +18,4 @@
         console.error(error);
         return res.status(error.status || 500).json({message: error.message});
     }
-}
+} 

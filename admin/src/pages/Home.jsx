@@ -6,8 +6,9 @@ import Search from '../components/Search';
 import { ProjectData_Context } from '../../contexts/projectdata-context';
 
 const Home = () => {
-  const projData = useContext(ProjectData_Context)
+  const [projData, setprojData] = useState(useContext(ProjectData_Context))
   const [searchQuery, setSearchQuery] = useState('');
+
   return (
     <div>
       <Navbar />
