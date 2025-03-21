@@ -28,45 +28,6 @@ const TABLE_HEAD = [
   // },
 ];
 
-// const TABLE_ROWS = [
-//   {
-//     name: "Dileep Saranga",
-//     ongoingtask: "CV Edit Part 1",
-//     clientlink: "abcdef",
-//     linkstatus: "",
-    
-    
-//   },
-//   {
-//     name: "Dileep Saranga",
-//     ongoingtask: " Part 1",
-//     clientlink: "abcdef",
-//     linkstatus: "",
-    
-//   },
-//   {
-//     name: "Dileep Saranga",
-//     ongoingtask: "CV Edit Part 1",
-//     clientlink: "abcdef",
-//     linkstatus: "",
-    
-//   },
-//   {
-//     name: "Dileep Saranga",
-//     ongoingtask: "CV Edit Part 1",
-//     clientlink: "abcdef",
-//     linkstatus: "",
-    
-//   },
-//   {
-//     name: "Dileep Saranga",
-//     ongoingtask: "CV Edit Part 1",
-//     clientlink: "abcdef",
-//     linkstatus: "",
-    
-//   },
-// ];
-
 const Content = ({allProjects, searchQuery}) => {
 
   const test = allProjects.projects
@@ -94,7 +55,7 @@ const Content = ({allProjects, searchQuery}) => {
     setFilteredProjects(filtered);
   }, [searchQuery, allProjects]);
   }; */
-  const filteredProjects = test.filter((project) =>
+  const filteredProjects = allProjects.projects.filter((project) =>
     project.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 

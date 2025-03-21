@@ -15,6 +15,7 @@ export const getAllTasks = async (req, res) => {
                 'Authorization': process.env.API_TOKEN,
                 'Content-Type': 'application/json'
             },
+            credentials: 'include',
         });
 
         const responseBody = await response.json();
@@ -42,6 +43,7 @@ export const getAllTasks = async (req, res) => {
                 // }))
             };
         });
+        console.log("fuck", taskDetails)
 
         // Send the filtered task details
         res.status(200).json(taskDetails);
