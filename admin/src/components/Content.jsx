@@ -25,8 +25,10 @@ const TABLE_HEAD = [
   // {
   //   head: "Link Status (if sent put the tick mark)",
     
+  
   // },
 ];
+
 
 const Content = ({allProjects, searchQuery}) => {
 
