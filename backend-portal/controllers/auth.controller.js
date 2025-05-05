@@ -2,13 +2,16 @@
  import jwt from 'jsonwebtoken';
  
  dotenv.config();
+
+ const portal_username = "drm_admin";
+ const portal_password = "admin";
  
  export const signin = async (req, res) => {
     const {username, password} = req.body;
     const expiryDate = new Date();
     expiryDate.setMonth(expiryDate.getMonth() + 1);
     try {
-        if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
+        if (username === portal_username && password === portal_password) {
             const token = jwt.sign({username: username}, process.env.JWT_SECRET);
             res.cookie('access_token', token, {httpOnly: false, expires: expiryDate, path: '/', secure: false});
             return res.status(200).json({message: "Signin successful"});

@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const backendURL = import.meta.env.VITE_BACKEND_URL
+
 export default function SignIn() {
   const navigate = useNavigate();
   const [formData, setFormData] =  useState({});
@@ -13,7 +15,7 @@ export default function SignIn() {
   }
   const handleSubmit = async(e) => {
     e.preventDefault();
-      const res = await fetch('http://localhost:5000/api/auth/signin', {
+      const res = await fetch(`${backendURL}/api/auth/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
