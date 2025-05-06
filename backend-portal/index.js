@@ -7,18 +7,13 @@ import cookieParser from "cookie-parser";
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(express.json()); //by default we cannot send json body
-const allowedOrigins = ["https://dreamshift-portal-admin.onrender.com", "https://dreamshift-portal-s3h1.onrender.com", "http://localhost:4444", "http://localhost:4445"];
 app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
-    credentials: true
-}));
-app.options("*", cors());
+    origin: ['https://dreamshift-portal-admin.onrender.com','https://dreamshift-portal-s3h1.onrender.com'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true, // Allow credentials (cookies)
+  }));
+// app.options("*", cors());
 app.use(cookieParser());
 
 app.get("/test", (req, res) => {
