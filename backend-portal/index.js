@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(express.json()); //by default we cannot send json body
-const allowedOrigins = ["https://dreamshift-portal-admin.onrender.com", "https://dreamshift-portal-s3h1.onrender.com"];
+const allowedOrigins = ["https://dreamshift-portal-admin.onrender.com", "https://dreamshift-portal-s3h1.onrender.com", "http://localhost:4444", "http://localhost:4445"];
 app.use(cors({
     origin: (origin, callback) => {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
@@ -30,6 +30,9 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 app.use("/api/client", clientRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/test", (req, res) => {
+    res.json({ "clients": "success" })
+})
 
 
 
