@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(express.json()); //by default we cannot send json body
 app.use(cors({
-    origin: ['https://dreamshift-portal-admin.onrender.com','https://dreamshift-portal-s3h1.onrender.com'],
+    origin: ['https://dreamshift-portal-admin.onrender.com','https://dreamshift-portal-s3h1.onrender.com','http://localhost:4444','http://localhost:4445'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type'],
     credentials: true, // Allow credentials (cookies)
