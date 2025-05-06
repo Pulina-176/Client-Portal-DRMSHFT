@@ -13,7 +13,7 @@
     try {
         if (username === portal_username && password === portal_password) {
             const token = jwt.sign({username: username}, process.env.JWT_SECRET);
-            res.cookie('access_token', token, {httpOnly: true, expires: expiryDate, path: '/', secure: true, sameSite: 'None'});
+            res.cookie('access_token', token, {httpOnly: false, expires: expiryDate, path: '/', secure: true, sameSite: 'None'});
             return res.status(200).json({message: "Signin successful"});
         } else {
             return res.status(401).json({message: "Invalid credentials"});
