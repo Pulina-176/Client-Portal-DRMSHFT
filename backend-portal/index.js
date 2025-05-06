@@ -5,7 +5,7 @@ import authRoutes from "./routes/auth.route.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 const app = express();
-
+const PORT = process.env.PORT || 5000;
 app.use(express.json()); //by default we cannot send json body
 const allowedOrigins = ["https://dreamshift-portal-admin.onrender.com", "https://dreamshift-portal-s3h1.onrender.com"];
 app.use(cors({
@@ -25,7 +25,7 @@ app.get("/test", (req, res) => {
     res.json({ "clients": "success" })
 })
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 app.use("/api/client", clientRoutes);
 app.use("/api/admin", adminRoutes);
