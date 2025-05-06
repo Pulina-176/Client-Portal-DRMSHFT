@@ -29,7 +29,7 @@ export default function SignIn() {
       if (res.status === 200) {
         
         navigate('/links')
-        navigate(0);
+        // navigate(0);
       }
       else {
         alert('Invalid credentials');
