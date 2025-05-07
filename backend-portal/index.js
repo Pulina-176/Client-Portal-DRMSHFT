@@ -24,7 +24,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 app.use("/api/client", clientRoutes);
 app.use("/api/admin", adminRoutes);
-app.use("/api/auth", authRoutes);
+// app.use("/api/auth", authRoutes);
 app.use("/api/test", (req, res) => {
     res.json({ "clients": "success" })
 })
