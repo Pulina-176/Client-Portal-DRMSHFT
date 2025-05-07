@@ -45,10 +45,10 @@ const App = () => {
     <Router>
       <ProjectData_Context.Provider value={{projects}}>
       <Routes>
-      <Route path="/" element={  <SignIn />  }/>
-        <Route element={<PrivateRoute/>}>
-          <Route path="/links" element={  <Home />  }/>  
-          </Route>
+      {/* <Route path="/" element={  <SignIn />  }/> */}
+        {/* <Route element={<PrivateRoute/>}> */}
+          <Route path="/" element={  <Home />  }/>  
+          {/* </Route> */}
       </Routes>
       </ProjectData_Context.Provider>
     </Router>
